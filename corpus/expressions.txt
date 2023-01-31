@@ -1,0 +1,427 @@
+============================================
+Numeric Literals
+============================================
+
+  mov d1, #16
+  mov d1, #0B10000
+  mov d1, #0b10000
+  mov d1, #0X1F
+  mov d1, #0x1f
+  .float 12.457, +0.27E-13, -0.27E+13, .6
+
+---
+
+(source_file
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (operand_list
+      (data_register)
+      (decimal_integer)))
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (operand_list
+      (data_register)
+      (binary)))
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (operand_list
+      (data_register)
+      (binary)))
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (operand_list
+      (data_register)
+      (hexadecimal)))
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (operand_list
+      (data_register)
+      (hexadecimal)))
+  (directive_data_definition
+    mnemonic: (directive_mnemonic)
+    operands: (decimal_float)
+    operands: (unary_expression
+      operator: (operator)
+      operand: (decimal_float))
+    operands: (unary_expression
+      operator: (operator)
+      operand: (decimal_float))
+    operands: (decimal_float))
+)
+
+============================================
+String Literals
+============================================
+
+  .message  'ABCD', "ABCD", "A\"BC"
+  .message 'abc' ++ 'de'
+  .message ['TASKING', 0, 4], ["T" ++ 'TASKING', 0, 5]
+
+---
+
+(source_file
+  (directive_message
+    mnemonic: (directive_mnemonic)
+    operands: (string_literal)
+    operands: (string_literal)
+    operands: (string_literal))
+  (directive_message
+    mnemonic: (directive_mnemonic)
+    operands: (string_concate
+      (string_literal)
+      (string_literal)))
+  (directive_message
+    mnemonic: (directive_mnemonic)
+    operands: (substring
+      (string_literal)
+      (start_pos)
+      (length))
+    operands: (substring
+      (string_concate
+        (string_literal)
+        (string_literal))
+      (start_pos)
+      (length)))
+)
+
+============================================
+Unary Expressions
+============================================
+
+  mov d1, #+6
+  mov d1, #-6
+  mov d1, #!6
+  mov d1, #~0b1001
+
+---
+
+(source_file
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (operand_list
+      (data_register)
+      (unary_expression
+        operator: (operator)
+        operand: (decimal_integer))))
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (operand_list
+      (data_register)
+      (unary_expression
+        operator: (operator)
+        operand: (decimal_integer))))
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (operand_list
+      (data_register)
+      (unary_expression
+        operator: (operator)
+        operand: (decimal_integer))))
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (operand_list
+      (data_register)
+      (unary_expression
+        operator: (operator)
+        operand: (binary))))
+)
+
+============================================
+Binary Expressions
+============================================
+
+  var .set 16 && 0
+  var .set 16||0
+  var .set 6 == 0
+  var .set 6 != 0
+  var .set 6 < 0
+  var .set 6 <= 0
+  var .set 6 > 0
+  var .set 6 >= 0
+  var .set 6+4
+  var .set 6-3
+  var .set 2 * 4
+  var .set 9 / 2
+  var .set 9 % 5
+  var .set 9 | 5
+  var .set 9 ^ 5
+  var .set 9 & 5
+  var .set 4 >> 2
+  var .set 4 << 2
+
+---
+
+(source_file
+  (directive_set
+    left: (symbol)
+    mnemonic: (directive_mnemonic)
+    right: (binary_expression
+      left: (decimal_integer)
+      operator: (operator)
+      right: (decimal_integer)))
+  (directive_set
+    left: (symbol)
+    mnemonic: (directive_mnemonic)
+    right: (binary_expression
+      left: (decimal_integer)
+      operator: (operator)
+      right: (decimal_integer)))
+  (directive_set
+    left: (symbol)
+    mnemonic: (directive_mnemonic)
+    right: (binary_expression
+      left: (decimal_integer)
+      operator: (operator)
+      right: (decimal_integer)))
+  (directive_set
+    left: (symbol)
+    mnemonic: (directive_mnemonic)
+    right: (binary_expression
+      left: (decimal_integer)
+      operator: (operator)
+      right: (decimal_integer)))
+  (directive_set
+    left: (symbol)
+    mnemonic: (directive_mnemonic)
+    right: (binary_expression
+      left: (decimal_integer)
+      operator: (operator)
+      right: (decimal_integer)))
+  (directive_set
+    left: (symbol)
+    mnemonic: (directive_mnemonic)
+    right: (binary_expression
+      left: (decimal_integer)
+      operator: (operator)
+      right: (decimal_integer)))
+  (directive_set
+    left: (symbol)
+    mnemonic: (directive_mnemonic)
+    right: (binary_expression
+      left: (decimal_integer)
+      operator: (operator)
+      right: (decimal_integer)))
+  (directive_set
+    left: (symbol)
+    mnemonic: (directive_mnemonic)
+    right: (binary_expression
+      left: (decimal_integer)
+      operator: (operator)
+      right: (decimal_integer)))
+  (directive_set
+    left: (symbol)
+    mnemonic: (directive_mnemonic)
+    right: (binary_expression
+      left: (decimal_integer)
+      operator: (operator)
+      right: (decimal_integer)))
+  (directive_set
+    left: (symbol)
+    mnemonic: (directive_mnemonic)
+    right: (binary_expression
+      left: (decimal_integer)
+      operator: (operator)
+      right: (decimal_integer)))
+  (directive_set
+    left: (symbol)
+    mnemonic: (directive_mnemonic)
+    right: (binary_expression
+      left: (decimal_integer)
+      operator: (operator)
+      right: (decimal_integer)))
+  (directive_set
+    left: (symbol)
+    mnemonic: (directive_mnemonic)
+    right: (binary_expression
+      left: (decimal_integer)
+      operator: (operator)
+      right: (decimal_integer)))
+  (directive_set
+    left: (symbol)
+    mnemonic: (directive_mnemonic)
+    right: (binary_expression
+      left: (decimal_integer)
+      operator: (operator)
+      right: (decimal_integer)))
+  (directive_set
+    left: (symbol)
+    mnemonic: (directive_mnemonic)
+    right: (binary_expression
+      left: (decimal_integer)
+      operator: (operator)
+      right: (decimal_integer)))
+  (directive_set
+    left: (symbol)
+    mnemonic: (directive_mnemonic)
+    right: (binary_expression
+      left: (decimal_integer)
+      operator: (operator)
+      right: (decimal_integer)))
+  (directive_set
+    left: (symbol)
+    mnemonic: (directive_mnemonic)
+    right: (binary_expression
+      left: (decimal_integer)
+      operator: (operator)
+      right: (decimal_integer)))
+  (directive_set
+    left: (symbol)
+    mnemonic: (directive_mnemonic)
+    right: (binary_expression
+      left: (decimal_integer)
+      operator: (operator)
+      right: (decimal_integer)))
+  (directive_set
+    left: (symbol)
+    mnemonic: (directive_mnemonic)
+    right: (binary_expression
+      left: (decimal_integer)
+      operator: (operator)
+      right: (decimal_integer)))
+)
+
+============================================
+Parenthesized Expressions
+============================================
+
+  mov d1, #(6 + 3)
+  var .set (6 - 2) << 2
+
+---
+
+(source_file
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (operand_list
+      (data_register)
+      (parenthesized_expression
+        (binary_expression
+          left: (decimal_integer)
+          operator: (operator)
+          right: (decimal_integer)))))  
+  (directive_set
+    left: (symbol)
+    mnemonic: (directive_mnemonic)
+    right: (binary_expression
+      left: (parenthesized_expression
+        (binary_expression
+          left: (decimal_integer)
+          operator: (operator)
+          right: (decimal_integer)))
+      operator: (operator)
+      right: (decimal_integer)))
+)
+
+============================================
+Interpolations
+============================================
+
+  ld.w  \reg, d1
+  ld.w  d0,_lab?reg1
+  ld.w  d0,_lab\?reg1
+  ld.w  D0, [A\reg1] 
+  ld.w  D0, _lab%VAL
+  ld.w  D0, _lab\%VAL
+\LAB:
+LAB\?VAL
+LAB\%VAL  STMT
+^LAB: ld.w   D0,\^addr
+
+---
+
+(source_file
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (operand_list
+      (interpolated (macro_arg))
+      (data_register)))
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (operand_list
+      (data_register)
+      (interpolated (macro_arg))))      
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (operand_list
+      (data_register)
+      (interpolated (macro_arg)))) 
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (operand_list
+      (data_register)
+      (base_offset
+        (register_macro_argument
+          (macro_arg)))))
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (operand_list
+      (data_register)
+      (interpolated (macro_arg)))) 
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (operand_list
+      (data_register)
+      (interpolated (macro_arg))))   
+  (label name: (interpolated (macro_arg)))    
+  (label name: (interpolated (macro_arg)))    
+  (label name: (interpolated (macro_arg)))       
+  (macro_call macro: (symbol))
+  (label name: (interpolated (macro_arg)))  
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (operand_list
+      (data_register)
+      (interpolated (macro_arg)))) 
+)
+
+============================================
+Function calls
+============================================
+
+  aval .set @ABS(-2.1)
+  ATAN2 .equ @AT2(-1.0,1.0)
+  ARGCOUNT  .set @cnt()
+  .WORD   -@COS(@CVF(COUNT)*FREQ)
+
+---
+
+(source_file
+  (directive_set
+    left: (symbol)
+    mnemonic: (directive_mnemonic)
+    right: (function_call
+      (builtIn_function)
+      (expression_list
+        (unary_expression
+          operator: (operator)
+          operand: (decimal_float)))))
+  (directive_equ
+    left: (symbol)
+    mnemonic: (directive_mnemonic)
+    right: (function_call
+      (builtIn_function)
+      (expression_list
+        (unary_expression
+          operator: (operator)
+          operand: (decimal_float))
+        (decimal_float))))
+  (directive_set
+    left: (symbol)
+    mnemonic: (directive_mnemonic)
+    right: (function_call
+      (builtIn_function))) 
+  (directive_data_definition
+    mnemonic: (directive_mnemonic)
+    operands: (unary_expression
+      operator: (operator)
+      operand: (function_call
+        (builtIn_function)
+        (expression_list
+          (binary_expression
+            left: (function_call
+              (builtIn_function)
+              (expression_list
+                (symbol)))
+            operator: (operator)
+            right: (symbol))))))       
+)

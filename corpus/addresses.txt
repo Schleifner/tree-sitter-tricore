@@ -1,0 +1,205 @@
+============================================
+Absolute address
+============================================
+
+  lea a7, NumberOfLoops
+  lea a0, _absadd
+
+---
+
+(source_file
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (operand_list
+      (address_register)
+      (symbol)))
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (operand_list
+      (address_register)
+      (symbol)))
+)
+
+============================================
+Base offset
+============================================
+
+  st.w  [a3], d2
+  st.w  [ a3 ], d2
+  st.w  [a3]4, d2
+  st.w  [ a3 ] 4, d2
+
+---
+
+(source_file
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (operand_list
+      (base_offset 
+        (address_register))
+      (data_register)))
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (operand_list
+      (base_offset 
+        (address_register))
+      (data_register)))
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (operand_list
+      (base_offset 
+        (address_register)
+        offset: (decimal_integer))
+      (data_register)))
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (operand_list
+      (base_offset 
+        (address_register)
+        offset: (decimal_integer))
+      (data_register)))
+)
+
+============================================
+Pre-increment
+============================================
+
+  st.w [+a3], d2
+  st.w [ + a3 ], d2
+  st.w [ + a3 ] 4, d2
+  st.w [+a3]4, d2
+
+---
+
+(source_file
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (operand_list
+      (pre_increment
+        (address_register))
+      (data_register)))
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (operand_list
+      (pre_increment 
+        (address_register))
+      (data_register)))
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (operand_list
+      (pre_increment
+        (address_register)
+        offset: (decimal_integer))
+      (data_register)))
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (operand_list
+      (pre_increment
+        (address_register)
+        offset: (decimal_integer))
+      (data_register)))
+)
+
+============================================
+Post-increment
+============================================
+
+  st.w [a3+], d2
+  st.w [ a3 + ], d2
+  st.w [ a3 + ] 4, d2
+  st.w [a3+]4, d2
+
+---
+
+(source_file
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (operand_list
+      (post_increment
+        (address_register))
+      (data_register)))
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (operand_list
+      (post_increment 
+        (address_register))
+      (data_register)))
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (operand_list
+      (post_increment
+        (address_register)
+        offset: (decimal_integer))
+      (data_register)))
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (operand_list
+      (post_increment
+        (address_register)
+        offset: (decimal_integer))
+      (data_register)))
+)
+
+============================================
+Circular
+============================================
+
+  st.w [a4/a5+c], d2
+  st.w [ a4 / a5 + c ], d2
+  st.w [a4/a5+c]4, d2
+  st.w [ a4 / a5 + c ] 4, d2
+
+---
+
+(source_file
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (operand_list
+      (circular
+        (extended_address_register))
+      (data_register)))
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (operand_list
+      (circular
+        (extended_address_register))
+      (data_register)))
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (operand_list
+      (circular
+        (extended_address_register)
+        offset: (decimal_integer))
+      (data_register)))
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (operand_list
+      (circular
+        (extended_address_register)
+        offset: (decimal_integer))
+      (data_register)))
+)
+
+============================================
+Bit reverse
+============================================
+
+  st.w [a4/a5+r], d2
+  st.w [ a4 / a5 + r ], d2 
+
+---
+
+(source_file
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (operand_list
+      (bit_reverse
+        (extended_address_register))
+      (data_register)))
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (operand_list
+      (bit_reverse
+        (extended_address_register))
+      (data_register)))
+)

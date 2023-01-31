@@ -1,0 +1,39 @@
+{
+  "name": "tree-sitter-tricore",
+  "version": "0.0.27",
+  "description": "Tricore Tasking assembly grammar for tree-sitter",
+  "main": "bindings/node",
+  "keywords": [
+    "parser",
+    "lexer",
+    "tricore",
+    "tasking",
+    "assembly",
+    "asm"
+  ],
+  "scripts": {
+    "build": "tree-sitter generate",
+    "test": "tree-sitter test"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "^18.11.18",
+    "nan": "^2.12.1",
+    "web-tree-sitter": "^0.20.7"
+  },
+  "devDependencies": {
+    "tree-sitter-cli": "^0.20.0"
+  },
+  "tree-sitter": [
+    {
+      "scope": "source.tricore",
+      "file-types": [
+        "asm",
+        "ASM",
+        "s",
+        "S"
+      ]
+    }
+  ]
+}
