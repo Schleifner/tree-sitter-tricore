@@ -850,17 +850,20 @@ module.exports = grammar({
         optional($._ws),
         choice(
           seq(
-            mnemonicChoice(
-              [
-                "$list", "$page", "$prctl", "$stitle", "$title", "$case", "$debug", "$hw_only", "$ident", 
-                "$mmu", "$no_fpu", "$object", "$tc131", "$tc16", "$tc16x", "$tc162", "$tc18"
-              ]
+            alias(
+              mnemonicChoice(
+                [
+                  "$list", "$page", "$prctl", "$stitle", "$title", "$case", "$debug", "$hw_only", "$ident", 
+                  "$mmu", "$no_fpu", "$object", "$tc131", "$tc16", "$tc16x", "$tc162", "$tc18"
+                ]
+              ),
+              $.control_mnemonic
             ),
             optional($._ws),
             optional(commaSep($._expression, $._sep)),
           ),
-          seq(mnemonicChoice(["$warning"]), $._ws, mnemonicChoice(["off"]), $._ws, $.decimal_integer),
-          seq(/\$[cC][pP][uU]_[tT][cC]\d+/, $._ws, mnemonicChoice(["off", "on"]))
+          seq(alias(mnemonicChoice(["$warning"]), $.control_mnemonic), $._ws, mnemonicChoice(["off"]), $._ws, $.decimal_integer),
+          seq(alias(/\$[cC][pP][uU]_[tT][cC]\d+/, $.control_mnemonic), $._ws, mnemonicChoice(["off", "on"]))
         ),
         optional($._end_line)
       ),

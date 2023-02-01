@@ -347,7 +347,7 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "binary",
@@ -355,6 +355,10 @@
         },
         {
           "type": "binary_expression",
+          "named": true
+        },
+        {
+          "type": "control_mnemonic",
           "named": true
         },
         {
@@ -3104,6 +3108,10 @@
   },
   {
     "type": "comment",
+    "named": true
+  },
+  {
+    "type": "control_mnemonic",
     "named": true
   },
   {

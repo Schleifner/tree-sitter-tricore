@@ -4138,77 +4138,82 @@
               "type": "SEQ",
               "members": [
                 {
-                  "type": "CHOICE",
-                  "members": [
-                    {
-                      "type": "PATTERN",
-                      "value": "[$][lL][iI][sS][tT]"
-                    },
-                    {
-                      "type": "PATTERN",
-                      "value": "[$][pP][aA][gG][eE]"
-                    },
-                    {
-                      "type": "PATTERN",
-                      "value": "[$][pP][rR][cC][tT][lL]"
-                    },
-                    {
-                      "type": "PATTERN",
-                      "value": "[$][sS][tT][iI][tT][lL][eE]"
-                    },
-                    {
-                      "type": "PATTERN",
-                      "value": "[$][tT][iI][tT][lL][eE]"
-                    },
-                    {
-                      "type": "PATTERN",
-                      "value": "[$][cC][aA][sS][eE]"
-                    },
-                    {
-                      "type": "PATTERN",
-                      "value": "[$][dD][eE][bB][uU][gG]"
-                    },
-                    {
-                      "type": "PATTERN",
-                      "value": "[$][hH][wW][_][oO][nN][lL][yY]"
-                    },
-                    {
-                      "type": "PATTERN",
-                      "value": "[$][iI][dD][eE][nN][tT]"
-                    },
-                    {
-                      "type": "PATTERN",
-                      "value": "[$][mM][mM][uU]"
-                    },
-                    {
-                      "type": "PATTERN",
-                      "value": "[$][nN][oO][_][fF][pP][uU]"
-                    },
-                    {
-                      "type": "PATTERN",
-                      "value": "[$][oO][bB][jJ][eE][cC][tT]"
-                    },
-                    {
-                      "type": "PATTERN",
-                      "value": "[$][tT][cC][1][3][1]"
-                    },
-                    {
-                      "type": "PATTERN",
-                      "value": "[$][tT][cC][1][6]"
-                    },
-                    {
-                      "type": "PATTERN",
-                      "value": "[$][tT][cC][1][6][xX]"
-                    },
-                    {
-                      "type": "PATTERN",
-                      "value": "[$][tT][cC][1][6][2]"
-                    },
-                    {
-                      "type": "PATTERN",
-                      "value": "[$][tT][cC][1][8]"
-                    }
-                  ]
+                  "type": "ALIAS",
+                  "content": {
+                    "type": "CHOICE",
+                    "members": [
+                      {
+                        "type": "PATTERN",
+                        "value": "[$][lL][iI][sS][tT]"
+                      },
+                      {
+                        "type": "PATTERN",
+                        "value": "[$][pP][aA][gG][eE]"
+                      },
+                      {
+                        "type": "PATTERN",
+                        "value": "[$][pP][rR][cC][tT][lL]"
+                      },
+                      {
+                        "type": "PATTERN",
+                        "value": "[$][sS][tT][iI][tT][lL][eE]"
+                      },
+                      {
+                        "type": "PATTERN",
+                        "value": "[$][tT][iI][tT][lL][eE]"
+                      },
+                      {
+                        "type": "PATTERN",
+                        "value": "[$][cC][aA][sS][eE]"
+                      },
+                      {
+                        "type": "PATTERN",
+                        "value": "[$][dD][eE][bB][uU][gG]"
+                      },
+                      {
+                        "type": "PATTERN",
+                        "value": "[$][hH][wW][_][oO][nN][lL][yY]"
+                      },
+                      {
+                        "type": "PATTERN",
+                        "value": "[$][iI][dD][eE][nN][tT]"
+                      },
+                      {
+                        "type": "PATTERN",
+                        "value": "[$][mM][mM][uU]"
+                      },
+                      {
+                        "type": "PATTERN",
+                        "value": "[$][nN][oO][_][fF][pP][uU]"
+                      },
+                      {
+                        "type": "PATTERN",
+                        "value": "[$][oO][bB][jJ][eE][cC][tT]"
+                      },
+                      {
+                        "type": "PATTERN",
+                        "value": "[$][tT][cC][1][3][1]"
+                      },
+                      {
+                        "type": "PATTERN",
+                        "value": "[$][tT][cC][1][6]"
+                      },
+                      {
+                        "type": "PATTERN",
+                        "value": "[$][tT][cC][1][6][xX]"
+                      },
+                      {
+                        "type": "PATTERN",
+                        "value": "[$][tT][cC][1][6][2]"
+                      },
+                      {
+                        "type": "PATTERN",
+                        "value": "[$][tT][cC][1][8]"
+                      }
+                    ]
+                  },
+                  "named": true,
+                  "value": "control_mnemonic"
                 },
                 {
                   "type": "CHOICE",
@@ -4261,13 +4266,18 @@
               "type": "SEQ",
               "members": [
                 {
-                  "type": "CHOICE",
-                  "members": [
-                    {
-                      "type": "PATTERN",
-                      "value": "[$][wW][aA][rR][nN][iI][nN][gG]"
-                    }
-                  ]
+                  "type": "ALIAS",
+                  "content": {
+                    "type": "CHOICE",
+                    "members": [
+                      {
+                        "type": "PATTERN",
+                        "value": "[$][wW][aA][rR][nN][iI][nN][gG]"
+                      }
+                    ]
+                  },
+                  "named": true,
+                  "value": "control_mnemonic"
                 },
                 {
                   "type": "SYMBOL",
@@ -4296,8 +4306,13 @@
               "type": "SEQ",
               "members": [
                 {
-                  "type": "PATTERN",
-                  "value": "\\$[cC][pP][uU]_[tT][cC]\\d+"
+                  "type": "ALIAS",
+                  "content": {
+                    "type": "PATTERN",
+                    "value": "\\$[cC][pP][uU]_[tT][cC]\\d+"
+                  },
+                  "named": true,
+                  "value": "control_mnemonic"
                 },
                 {
                   "type": "SYMBOL",
