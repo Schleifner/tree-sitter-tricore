@@ -967,7 +967,7 @@ module.exports = grammar({
         optional($._ws),
         alias(/\d+/, $.bit_position)
       ),
-    address_register: () => /[aA](?:[0-9]|1[0-5])|sp/,
+    address_register: () => /[aA](?:[0-9]|1[0-5])|[sS][pP]/,
     extended_data_register: () => /[eE](?:[02468]|1[024])|[dD](?:[02468]|1[024])\s*\/\s*[dD](?:[13579]|1[135])/,
     extended_address_register: () => /[aA](?:[02468]|1[024])\s*\/\s*[aA](?:[13579]|1[135])/,
 
