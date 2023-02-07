@@ -18,9 +18,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@types/node": "^18.11.18",
-    "nan": "^2.12.1",
-    "web-tree-sitter": "^0.20.7"
+    "nan": "^2.12.1"
   },
   "devDependencies": {
     "tree-sitter-cli": "^0.20.0"
