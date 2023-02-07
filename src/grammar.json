@@ -4703,7 +4703,7 @@
     },
     "address_register": {
       "type": "PATTERN",
-      "value": "[aA](?:[0-9]|1[0-5])|sp"
+      "value": "[aA](?:[0-9]|1[0-5])|[sS][pP]"
     },
     "extended_data_register": {
       "type": "PATTERN",
